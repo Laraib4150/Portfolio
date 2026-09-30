@@ -1,216 +1,496 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Laraib Momin - Software Engineer</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Laraib Momin | Software Engineer</title>
+  <meta name="description" content="Portfolio of Laraib Momin - Software Engineer experienced in Java, Python, SQL, and Scalable Application Development." />
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#eef2ff',
+              100: '#e0e7ff',
+              500: '#6366f1',
+              600: '#4f46e5',
+              700: '#4338ca',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    .glass-card {
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(226, 232, 240, 0.8);
+    }
+    .dark .glass-card {
+      background: rgba(15, 23, 42, 0.75);
+      border: 1px solid rgba(51, 65, 85, 0.6);
+    }
+  </style>
 </head>
-<body>
-    <nav class="navbar">
-        <div class="nav-content">
-            <div class="logo">LM</div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
+<body class="bg-slate-50 text-slate-800 dark:bg-slate-950 dark:text-slate-100 transition-colors duration-300 antialiased selection:bg-indigo-500 selection:text-white">
+
+  <!-- Navigation -->
+  <header class="fixed top-0 inset-x-0 z-50 glass-card border-b">
+    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="#" class="font-extrabold text-xl tracking-tight text-slate-900 dark:text-white">
+        Laraib<span class="text-indigo-600 dark:text-indigo-400">.M</span>
+      </a>
+      
+      <nav class="hidden md:flex items-center space-x-8 text-sm font-medium">
+        <a href="#about" class="text-slate-600 hover:text-indigo-600 dark:text-slate-300 dark:hover:text-indigo-400 transition">About</a>
+        <a href="#experience" class="text-slate-600 hover:text-indigo-600 dark:text-slate-300 dark:hover:text-indigo-400 transition">Experience</a>
+        <a href="#projects" class="text-slate-600 hover:text-indigo-600 dark:text-slate-300 dark:hover:text-indigo-400 transition">Projects</a>
+        <a href="#skills" class="text-slate-600 hover:text-indigo-600 dark:text-slate-300 dark:hover:text-indigo-400 transition">Skills</a>
+        <a href="#education" class="text-slate-600 hover:text-indigo-600 dark:text-slate-300 dark:hover:text-indigo-400 transition">Education</a>
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <!-- Theme Toggle -->
+        <button id="theme-toggle" class="p-2 rounded-xl text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition">
+          <i data-lucide="moon" id="theme-icon-dark" class="w-5 h-5 hidden"></i>
+          <i data-lucide="sun" id="theme-icon-light" class="w-5 h-5"></i>
+        </button>
+
+        <a href="#contact" class="hidden sm:inline-flex items-center justify-center px-4 py-2 text-sm font-semibold rounded-xl text-white bg-indigo-600 hover:bg-indigo-700 transition shadow-sm hover:shadow-indigo-500/25">
+          Get in Touch
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="about" class="pt-32 pb-20 md:pt-40 md:pb-28 max-w-6xl mx-auto px-6">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
+      
+      <!-- Text Bio -->
+      <div class="md:col-span-7 space-y-6">
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold bg-indigo-50 dark:bg-indigo-950/60 text-indigo-600 dark:text-indigo-400 border border-indigo-200 dark:border-indigo-900">
+          <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+          Available for Software Engineering Roles
+        </div>
+
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 dark:text-white">
+          Hi, I'm <span class="bg-gradient-to-r from-indigo-600 to-violet-600 bg-clip-text text-transparent">Laraib Momin</span>
+        </h1>
+
+        <p class="text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
+          Enthusiastic and detail-oriented Software Engineer specialized in <strong class="text-slate-900 dark:text-white font-semibold">Java, SQL, and Python</strong>. Experienced in designing scalable backends, applying SOLID principles and Design Patterns, and optimizing real-world databases and APIs.
+        </p>
+
+        <!-- Social Badges & Actions -->
+        <div class="flex flex-wrap items-center gap-4 pt-2">
+          <a href="https://github.com/Laraib4150" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-slate-300 dark:border-slate-700 text-sm font-semibold hover:border-indigo-500 dark:hover:border-indigo-400 transition bg-white/50 dark:bg-slate-900/50">
+            <i data-lucide="github" class="w-4 h-4"></i> GitHub
+          </a>
+          <a href="https://linkedin.com/in/laraib-momin-242330231" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-slate-300 dark:border-slate-700 text-sm font-semibold hover:border-indigo-500 dark:hover:border-indigo-400 transition bg-white/50 dark:bg-slate-900/50">
+            <i data-lucide="linkedin" class="w-4 h-4 text-blue-500"></i> LinkedIn
+          </a>
+          <a href="mailto:laraibmomin057@gmail.com" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-slate-300 dark:border-slate-700 text-sm font-semibold hover:border-indigo-500 dark:hover:border-indigo-400 transition bg-white/50 dark:bg-slate-900/50">
+            <i data-lucide="mail" class="w-4 h-4 text-rose-500"></i> Email Me
+          </a>
+        </div>
+      </div>
+
+      <!-- Profile Photo -->
+      <div class="md:col-span-5 flex justify-center">
+        <div class="relative group">
+          <div class="absolute -inset-1 rounded-3xl bg-gradient-to-r from-indigo-500 to-violet-600 opacity-30 group-hover:opacity-60 blur-xl transition duration-500"></div>
+          <div class="relative w-64 h-64 sm:w-80 sm:h-80 rounded-3xl overflow-hidden border-2 border-white dark:border-slate-800 shadow-2xl">
+            <!-- Ensure you save your photo as profile.jpg in the repository root -->
+            <img 
+              src="profile.jpg" 
+              alt="Laraib Momin" 
+              class="w-full h-full object-cover object-top hover:scale-105 transition duration-500"
+              onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80';"
+            />
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Experience Section -->
+  <section id="experience" class="py-20 bg-slate-100/60 dark:bg-slate-900/40 border-y border-slate-200 dark:border-slate-800">
+    <div class="max-w-6xl mx-auto px-6">
+      
+      <div class="max-w-xl mb-12">
+        <h2 class="text-xs font-bold uppercase tracking-wider text-indigo-600 dark:text-indigo-400">Work History</h2>
+        <p class="text-3xl font-extrabold text-slate-900 dark:text-white mt-1">Professional Experience</p>
+      </div>
+
+      <div class="relative pl-6 sm:pl-8 border-l-2 border-indigo-200 dark:border-indigo-900 space-y-10">
+        
+        <!-- Experience Card -->
+        <div class="relative group">
+          <div class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-indigo-600 ring-4 ring-white dark:ring-slate-950"></div>
+          
+          <div class="glass-card p-6 sm:p-8 rounded-2xl shadow-sm hover:shadow-md transition">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
+              <div>
+                <h3 class="text-xl font-bold text-slate-900 dark:text-white">Software Engineer Intern</h3>
+                <p class="text-sm font-medium text-indigo-600 dark:text-indigo-400">Yuga Yatra Retail Private Limited</p>
+              </div>
+              <span class="inline-flex text-xs font-semibold px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 w-fit">
+                Apr 2025 – Jun 2025
+              </span>
+            </div>
+
+            <ul class="space-y-2 text-sm text-slate-600 dark:text-slate-300">
+              <li class="flex items-start gap-2">
+                <i data-lucide="check-circle" class="w-4 h-4 text-emerald-500 mt-0.5 shrink-0"></i>
+                <span>Designed and developed software modules using Cursor AI and Android Studio.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="check-circle" class="w-4 h-4 text-emerald-500 mt-0.5 shrink-0"></i>
+                <span>Collaborated with engineering teams to integrate REST APIs and manage high-volume transactional data using MySQL.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="check-circle" class="w-4 h-4 text-emerald-500 mt-0.5 shrink-0"></i>
+                <span>Implemented reusable design patterns and modular OOP structures for continuous system performance optimization.</span>
+              </li>
             </ul>
-            <div class="menu-btn">
-                <i class="fas fa-bars"></i>
+
+            <div class="flex flex-wrap gap-2 mt-6 pt-4 border-t border-slate-200 dark:border-slate-800 text-xs">
+              <span class="px-2.5 py-1 rounded-md bg-indigo-50 dark:bg-indigo-950/70 text-indigo-700 dark:text-indigo-300 font-medium">MySQL</span>
+              <span class="px-2.5 py-1 rounded-md bg-indigo-50 dark:bg-indigo-950/70 text-indigo-700 dark:text-indigo-300 font-medium">API Integration</span>
+              <span class="px-2.5 py-1 rounded-md bg-indigo-50 dark:bg-indigo-950/70 text-indigo-700 dark:text-indigo-300 font-medium">Android Studio</span>
+              <span class="px-2.5 py-1 rounded-md bg-indigo-50 dark:bg-indigo-950/70 text-indigo-700 dark:text-indigo-300 font-medium">Cursor AI</span>
+              <span class="px-2.5 py-1 rounded-md bg-indigo-50 dark:bg-indigo-950/70 text-indigo-700 dark:text-indigo-300 font-medium">Design Patterns</span>
             </div>
+          </div>
         </div>
-    </nav>
 
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>Laraib Momin</h1>
-            <h2>Software Engineer</h2>
-            <p>Final-year B.Tech CSE student passionate about software development and problem-solving</p>
-            <div class="social-links">
-                <a href="https://github.com/Laraib4150" target="_blank"><i class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/laraib-momin-242330231/" target="_blank"><i class="fab fa-linkedin"></i></a>
-                <a href="mailto:laraibmomin057@gmail.com"><i class="fas fa-envelope"></i></a>
-            </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="py-20 max-w-6xl mx-auto px-6">
+    <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-12 gap-4">
+      <div>
+        <h2 class="text-xs font-bold uppercase tracking-wider text-indigo-600 dark:text-indigo-400">Portfolio</h2>
+        <p class="text-3xl font-extrabold text-slate-900 dark:text-white mt-1">Featured Projects</p>
+      </div>
+      <a href="https://github.com/Laraib4150" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-sm font-semibold text-indigo-600 dark:text-indigo-400 hover:underline">
+        See more on GitHub <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+      </a>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      
+      <!-- Project 1: Healthcare Chatbot -->
+      <div class="glass-card rounded-2xl p-7 flex flex-col justify-between hover:-translate-y-1 hover:shadow-xl transition duration-300">
+        <div>
+          <div class="flex items-center justify-between mb-4">
+            <span class="p-2.5 rounded-xl bg-indigo-100 dark:bg-indigo-900/50 text-indigo-600 dark:text-indigo-400">
+              <i data-lucide="bot" class="w-6 h-6"></i>
+            </span>
+            <span class="text-xs font-bold uppercase px-2.5 py-1 rounded-full bg-emerald-50 dark:bg-emerald-950/60 text-emerald-600 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-800">
+              Machine Learning
+            </span>
+          </div>
+
+          <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Healthcare Chatbot</h3>
+          <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
+            An intelligent medical diagnosis and recommendation application built using Python and Decision Tree algorithms to predict diseases from symptoms and connect users with specialists.
+          </p>
+
+          <div class="space-y-2 text-xs text-slate-500 dark:text-slate-400 mb-6">
+            <p>• Engineered a custom Decision Tree classifier optimized for high diagnostic accuracy.</p>
+            <p>• Built an interactive UI with Tkinter for instant symptom triage and doctor routing.</p>
+          </div>
         </div>
-    </section>
 
-    <section id="about" class="section">
-        <h2 class="section-title">About Me</h2>
-        <div class="about-content">
-            <div class="about-main">
-                <img src="Laraib Momin.jpeg" alt="Laraib Momin" class="about-image">
-                <div class="about-text">
-                    <p>I'm a final-year Bachelor of Technology student studying Computer Science Engineering at Galgotias University. With a strong foundation in Java programming, SQL database management, and Python development, I'm passionate about creating efficient software solutions. I'm currently seeking opportunities where I can apply my technical skills and continue growing as a software engineer.</p>
-                </div>
-            </div>
-            <div class="education">
-                <h3>Education</h3>
-                <div class="education-item">
-                    <h4>Galgotias University</h4>
-                    <p>B.Tech (CSE) | 2021 - 2025</p>
-                    <p>CGPA: 8.31 (Till VII Sem)</p>
-                </div>
-                <div class="education-item">
-                    <h4>St. Paul's School</h4>
-                    <p>Intermediate | 2020 - 2021</p>
-                    <p>Percentage: 82%</p>
-                </div>
-                <div class="education-item">
-                    <h4>Holy Child School</h4>
-                    <p>High School | 2018 - 2019</p>
-                    <p>Percentage: 75.8%</p>
-                </div>
-            </div>
+        <div>
+          <div class="flex flex-wrap gap-2 mb-6">
+            <span class="text-xs font-semibold px-2.5 py-1 rounded bg-slate-200/70 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Python</span>
+            <span class="text-xs font-semibold px-2.5 py-1 rounded bg-slate-200/70 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Tkinter</span>
+            <span class="text-xs font-semibold px-2.5 py-1 rounded bg-slate-200/70 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Decision Trees</span>
+            <span class="text-xs font-semibold px-2.5 py-1 rounded bg-slate-200/70 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Scikit-learn</span>
+          </div>
+
+          <div class="flex items-center gap-4 pt-4 border-t border-slate-200 dark:border-slate-800">
+            <a href="https://github.com/Laraib4150" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-bold text-indigo-600 dark:text-indigo-400 hover:underline">
+              <i data-lucide="github" class="w-4 h-4"></i> Source Code
+            </a>
+          </div>
         </div>
-    </section>
+      </div>
 
-    <section id="skills" class="section">
-        <h2 class="section-title">Skills</h2>
-        <div class="skills-grid">
-            <div class="skill-card">
-                <i class="fab fa-java"></i>
-                <h3>Java</h3>
-                <p>Core Java, Spring Boot</p>
-            </div>
-            <div class="skill-card">
-                <i class="fab fa-python"></i>
-                <h3>Python</h3>
-                <p>ML, Data Analysis</p>
-            </div>
-            <div class="skill-card">
-                <i class="fas fa-database"></i>
-                <h3>SQL & DBMS</h3>
-                <p>Database Management</p>
-            </div>
-            <div class="skill-card">
-                <i class="fas fa-code"></i>
-                <h3>Web Development</h3>
-                <p>HTML, CSS</p>
-            </div>
-            <div class="skill-card">
-                <i class="fas fa-brain"></i>
-                <h3>Machine Learning</h3>
-                <p>AI/ML Fundamentals</p>
-            </div>
-            <div class="skill-card">
-                <i class="fas fa-network-wired"></i>
-                <h3>Networking</h3>
-                <p>Computer Networks</p>
-            </div>
+      <!-- Project 2: Java Full-Stack & Spring Boot System -->
+      <div class="glass-card rounded-2xl p-7 flex flex-col justify-between hover:-translate-y-1 hover:shadow-xl transition duration-300">
+        <div>
+          <div class="flex items-center justify-between mb-4">
+            <span class="p-2.5 rounded-xl bg-purple-100 dark:bg-purple-900/50 text-purple-600 dark:text-purple-400">
+              <i data-lucide="database" class="w-6 h-6"></i>
+            </span>
+            <span class="text-xs font-bold uppercase px-2.5 py-1 rounded-full bg-purple-50 dark:bg-purple-950/60 text-purple-600 dark:text-purple-400 border border-purple-200 dark:border-purple-800">
+              Backend & Architecture
+            </span>
+          </div>
+
+          <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Enterprise REST API & Database Service</h3>
+          <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
+            Scalable backend architecture applying OOP design patterns, relational schema normalization, and robust endpoints for transaction handling.
+          </p>
+
+          <div class="space-y-2 text-xs text-slate-500 dark:text-slate-400 mb-6">
+            <p>• Implemented SOLID design principles ensuring modular code reusability.</p>
+            <p>• Optimized MySQL queries and integrated secure API communication channels.</p>
+          </div>
         </div>
-    </section>
 
-    <section id="experience" class="section">
-        <h2 class="section-title">Experience</h2>
-        <div class="timeline">
-            <div class="timeline-item">
-                <div class="timeline-content">
-                    <h3>Software Engineer Intern</h3>
-                    <h4>Yugya Yatra Retail Pvt Limited</h4>
-                    <p class="date">04/2025 - Present</p>
-                </div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-content">
-                    <h3>Web Development Intern</h3>
-                    <h4>IBM Skills Build</h4>
-                    <p class="date">06/2023 - 07/2023</p>
-                </div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-content">
-                    <h3>AI/ML Virtual Intern</h3>
-                    <h4>AICTE - Amazon Web Services</h4>
-                    <p class="date">07/2022 - 09/2022</p>
-                </div>
-            </div>
+        <div>
+          <div class="flex flex-wrap gap-2 mb-6">
+            <span class="text-xs font-semibold px-2.5 py-1 rounded bg-slate-200/70 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Java</span>
+            <span class="text-xs font-semibold px-2.5 py-1 rounded bg-slate-200/70 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Spring Boot</span>
+            <span class="text-xs font-semibold px-2.5 py-1 rounded bg-slate-200/70 dark:bg-slate-800 text-slate-700 dark:text-slate-300">MySQL</span>
+            <span class="text-xs font-semibold px-2.5 py-1 rounded bg-slate-200/70 dark:bg-slate-800 text-slate-700 dark:text-slate-300">REST APIs</span>
+          </div>
+
+          <div class="flex items-center gap-4 pt-4 border-t border-slate-200 dark:border-slate-800">
+            <a href="https://github.com/Laraib4150" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-bold text-indigo-600 dark:text-indigo-400 hover:underline">
+              <i data-lucide="github" class="w-4 h-4"></i> Source Code
+            </a>
+          </div>
         </div>
-    </section>
+      </div>
 
-    <section id="projects" class="section">
-        <h2 class="section-title">Projects</h2>
-        <div class="projects-grid">
-            <div class="project-card">
-                <h3>Healthcare Chatbot</h3>
-                <p>Developed an AI-powered healthcare chatbot in a team of four. Responsible for chatbot functionality development and model optimization.</p>
-                <div class="project-tags">
-                    <span>Python</span>
-                    <span>Machine Learning</span>
-                    <span>NLP</span>
-                </div>
-            </div>
+    </div>
+  </section>
+
+  <!-- Technical Skills Section -->
+  <section id="skills" class="py-20 bg-slate-100/60 dark:bg-slate-900/40 border-y border-slate-200 dark:border-slate-800">
+    <div class="max-w-6xl mx-auto px-6">
+      
+      <div class="max-w-xl mb-12">
+        <h2 class="text-xs font-bold uppercase tracking-wider text-indigo-600 dark:text-indigo-400">Toolkit</h2>
+        <p class="text-3xl font-extrabold text-slate-900 dark:text-white mt-1">Technical Skills & Competencies</p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+        <!-- Category: Languages -->
+        <div class="glass-card p-6 rounded-2xl">
+          <div class="flex items-center gap-3 mb-4">
+            <i data-lucide="code" class="w-5 h-5 text-indigo-600 dark:text-indigo-400"></i>
+            <h3 class="font-bold text-slate-900 dark:text-white">Programming Languages</h3>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1.5 bg-white dark:bg-slate-800 rounded-lg text-xs font-semibold shadow-sm">Java</span>
+            <span class="px-3 py-1.5 bg-white dark:bg-slate-800 rounded-lg text-xs font-semibold shadow-sm">Python</span>
+            <span class="px-3 py-1.5 bg-white dark:bg-slate-800 rounded-lg text-xs font-semibold shadow-sm">SQL</span>
+            <span class="px-3 py-1.5 bg-white dark:bg-slate-800 rounded-lg text-xs font-semibold shadow-sm">HTML5 / CSS3</span>
+          </div>
         </div>
-    </section>
 
-    <section id="certifications" class="section">
-        <h2 class="section-title">Certifications & Achievements</h2>
-        <div class="certifications-grid">
-            <div class="certification-card">
-                <h3>Certifications</h3>
-                <ul>
-                    <li>TCS ion Career Edge- Young Professional</li>
-                    <li>AWS Academy Machine Learning Foundations</li>
-                    <li>GeeksforGeeks Programming Language Foundation Builder</li>
-                </ul>
-            </div>
-            <div class="certification-card">
-                <h3>Achievements</h3>
-                <ul>
-                    <li>Certified Java Full Stack training by Wipro</li>
-                    <li>Eight Weeks Mastering Data Structure and Algorithms Training by GeeksforGeeks</li>
-                    <li>Three Months Coding and System Design training by Ritambhara Technology</li>
-                </ul>
-            </div>
+        <!-- Category: Core Concepts -->
+        <div class="glass-card p-6 rounded-2xl">
+          <div class="flex items-center gap-3 mb-4">
+            <i data-lucide="cpu" class="w-5 h-5 text-indigo-600 dark:text-indigo-400"></i>
+            <h3 class="font-bold text-slate-900 dark:text-white">Computer Science Core</h3>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1.5 bg-white dark:bg-slate-800 rounded-lg text-xs font-semibold shadow-sm">Data Structures & Algo (DSA)</span>
+            <span class="px-3 py-1.5 bg-white dark:bg-slate-800 rounded-lg text-xs font-semibold shadow-sm">OOP Concepts</span>
+            <span class="px-3 py-1.5 bg-white dark:bg-slate-800 rounded-lg text-xs font-semibold shadow-sm">DBMS & SQL Design</span>
+            <span class="px-3 py-1.5 bg-white dark:bg-slate-800 rounded-lg text-xs font-semibold shadow-sm">SOLID Principles</span>
+            <span class="px-3 py-1.5 bg-white dark:bg-slate-800 rounded-lg text-xs font-semibold shadow-sm">Design Patterns</span>
+            <span class="px-3 py-1.5 bg-white dark:bg-slate-800 rounded-lg text-xs font-semibold shadow-sm">Computer Networks</span>
+          </div>
         </div>
-    </section>
 
-    <section id="contact" class="section">
-        <h2 class="section-title">Contact Me</h2>
-        <div class="contact-content">
-            <div class="contact-info">
-                <div class="contact-item">
-                    <i class="fas fa-phone"></i>
-                    <p>+91 9690317419</p>
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-envelope"></i>
-                    <p>laraibmomin057@gmail.com</p>
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <p>GB Nagar, Uttar Pradesh</p>
-                </div>
-                <div class="contact-item">
-                    <i class="fab fa-github"></i>
-                    <a href="https://github.com/Laraib4150" target="_blank">github.com/Laraib4150</a>
-                </div>
-                <div class="contact-item">
-                    <i class="fab fa-linkedin"></i>
-                    <a href="https://www.linkedin.com/in/laraib-momin-242330231/" target="_blank">linkedin.com/in/laraib-momin-242330231</a>
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-download"></i>
-                    <a href="Laraib_Momin Resume_.pdf" download class="download-button">Download Resume</a>
-                </div>
-            </div>
-            <form id="contact-form" class="contact-form">
-                <input type="text" placeholder="Name" required>
-                <input type="email" placeholder="Email" required>
-                <textarea placeholder="Message" required></textarea>
-                <button type="submit">Send Message</button>
-            </form>
+        <!-- Category: Tools & Platforms -->
+        <div class="glass-card p-6 rounded-2xl">
+          <div class="flex items-center gap-3 mb-4">
+            <i data-lucide="wrench" class="w-5 h-5 text-indigo-600 dark:text-indigo-400"></i>
+            <h3 class="font-bold text-slate-900 dark:text-white">Tools & Platforms</h3>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1.5 bg-white dark:bg-slate-800 rounded-lg text-xs font-semibold shadow-sm">Spring Boot</span>
+            <span class="px-3 py-1.5 bg-white dark:bg-slate-800 rounded-lg text-xs font-semibold shadow-sm">MySQL</span>
+            <span class="px-3 py-1.5 bg-white dark:bg-slate-800 rounded-lg text-xs font-semibold shadow-sm">Git & GitHub</span>
+            <span class="px-3 py-1.5 bg-white dark:bg-slate-800 rounded-lg text-xs font-semibold shadow-sm">Android Studio</span>
+            <span class="px-3 py-1.5 bg-white dark:bg-slate-800 rounded-lg text-xs font-semibold shadow-sm">Cursor AI</span>
+            <span class="px-3 py-1.5 bg-white dark:bg-slate-800 rounded-lg text-xs font-semibold shadow-sm">VS Code</span>
+          </div>
         </div>
-    </section>
 
-    <footer>
-        <p>&copy; 2025 Laraib Momin. All rights reserved.</p>
-    </footer>
+      </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    <script src="script.js"></script>
+    </div>
+  </section>
+
+  <!-- Education & Certifications -->
+  <section id="education" class="py-20 max-w-6xl mx-auto px-6">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+      
+      <!-- Education Column -->
+      <div>
+        <h2 class="text-xs font-bold uppercase tracking-wider text-indigo-600 dark:text-indigo-400 mb-2">Academics</h2>
+        <p class="text-2xl font-extrabold text-slate-900 dark:text-white mb-6">Education</p>
+
+        <div class="space-y-6">
+          <div class="glass-card p-6 rounded-2xl">
+            <div class="flex justify-between items-start mb-2">
+              <div>
+                <h3 class="font-bold text-slate-900 dark:text-white">Galgotias University</h3>
+                <p class="text-sm text-indigo-600 dark:text-indigo-400">B.Tech - Computer Science & Engineering</p>
+              </div>
+              <span class="text-xs font-semibold px-2.5 py-1 rounded bg-indigo-50 dark:bg-indigo-950 text-indigo-600 dark:text-indigo-400">2021 – 2025</span>
+            </div>
+            <p class="text-xs font-semibold text-slate-600 dark:text-slate-400">CGPA: 8.01 / 10</p>
+          </div>
+
+          <div class="glass-card p-6 rounded-2xl">
+            <div class="flex justify-between items-start mb-2">
+              <div>
+                <h3 class="font-bold text-slate-900 dark:text-white">St. Paul's School</h3>
+                <p class="text-sm text-slate-600 dark:text-slate-300">Intermediate (12th)</p>
+              </div>
+              <span class="text-xs font-semibold px-2.5 py-1 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400">2020 – 2021</span>
+            </div>
+            <p class="text-xs font-semibold text-slate-600 dark:text-slate-400">Score: 82%</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Certifications Column -->
+      <div>
+        <h2 class="text-xs font-bold uppercase tracking-wider text-indigo-600 dark:text-indigo-400 mb-2">Credentials</h2>
+        <p class="text-2xl font-extrabold text-slate-900 dark:text-white mb-6">Certifications & Training</p>
+
+        <div class="grid grid-cols-1 gap-3">
+          <div class="p-4 rounded-xl glass-card flex items-center gap-3">
+            <i data-lucide="award" class="w-5 h-5 text-indigo-500 shrink-0"></i>
+            <div>
+              <p class="text-sm font-semibold text-slate-900 dark:text-white">Java Full Stack Certification</p>
+              <p class="text-xs text-slate-500 dark:text-slate-400">Wipro</p>
+            </div>
+          </div>
+
+          <div class="p-4 rounded-xl glass-card flex items-center gap-3">
+            <i data-lucide="award" class="w-5 h-5 text-indigo-500 shrink-0"></i>
+            <div>
+              <p class="text-sm font-semibold text-slate-900 dark:text-white">AWS Academy Machine Learning Foundations</p>
+              <p class="text-xs text-slate-500 dark:text-slate-400">AWS Academy</p>
+            </div>
+          </div>
+
+          <div class="p-4 rounded-xl glass-card flex items-center gap-3">
+            <i data-lucide="award" class="w-5 h-5 text-indigo-500 shrink-0"></i>
+            <div>
+              <p class="text-sm font-semibold text-slate-900 dark:text-white">Mastering Data Structures & Algorithms</p>
+              <p class="text-xs text-slate-500 dark:text-slate-400">GeeksforGeeks (8-Week Intensive)</p>
+            </div>
+          </div>
+
+          <div class="p-4 rounded-xl glass-card flex items-center gap-3">
+            <i data-lucide="award" class="w-5 h-5 text-indigo-500 shrink-0"></i>
+            <div>
+              <p class="text-sm font-semibold text-slate-900 dark:text-white">Coding & System Design Training</p>
+              <p class="text-xs text-slate-500 dark:text-slate-400">Ritambhara Technologies (3 Months)</p>
+            </div>
+          </div>
+
+          <div class="p-4 rounded-xl glass-card flex items-center gap-3">
+            <i data-lucide="award" class="w-5 h-5 text-indigo-500 shrink-0"></i>
+            <div>
+              <p class="text-sm font-semibold text-slate-900 dark:text-white">TCS iON Career Edge - Young Professional</p>
+              <p class="text-xs text-slate-500 dark:text-slate-400">TCS iON</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-20 bg-slate-900 text-white relative overflow-hidden">
+    <div class="max-w-4xl mx-auto px-6 text-center space-y-6 relative z-10">
+      <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Let's Build Something Together</h2>
+      <p class="text-slate-400 max-w-xl mx-auto text-base">
+        Whether you have an open software engineering role, want to collaborate on a backend project, or just say hello—my inbox is open.
+      </p>
+
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+        <a href="mailto:laraibmomin057@gmail.com" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 font-bold transition shadow-lg shadow-indigo-600/30">
+          <i data-lucide="mail" class="w-5 h-5"></i> Send an Email
+        </a>
+        <a href="https://linkedin.com/in/laraib-momin-242330231" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-slate-800 hover:bg-slate-700 font-bold transition border border-slate-700">
+          <i data-lucide="linkedin" class="w-5 h-5 text-blue-400"></i> Connect on LinkedIn
+        </a>
+      </div>
+
+      <div class="pt-10 flex flex-wrap justify-center gap-6 text-sm text-slate-400">
+        <span>📍 Greater Noida, UP, India</span>
+        <span>📞 +91 9690317419</span>
+        <span>✉️ laraibmomin057@gmail.com</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-8 bg-slate-950 text-slate-500 text-xs text-center border-t border-slate-900">
+    <p>© 2026 Laraib Momin. Built with Tailwind CSS.</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // Initialize Lucide Icons
+    lucide.createIcons();
+
+    // Dark Mode Toggle Logic
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const darkIcon = document.getElementById('theme-icon-dark');
+    const lightIcon = document.getElementById('theme-icon-light');
+
+    // Default to system preference or saved theme
+    if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+      darkIcon.classList.remove('hidden');
+      lightIcon.classList.add('hidden');
+    } else {
+      document.documentElement.classList.remove('dark');
+      lightIcon.classList.remove('hidden');
+      darkIcon.classList.add('hidden');
+    }
+
+    themeToggleBtn.addEventListener('click', () => {
+      document.documentElement.classList.toggle('dark');
+      if (document.documentElement.classList.contains('dark')) {
+        localStorage.setItem('color-theme', 'dark');
+        darkIcon.classList.remove('hidden');
+        lightIcon.classList.add('hidden');
+      } else {
+        localStorage.setItem('color-theme', 'light');
+        lightIcon.classList.remove('hidden');
+        darkIcon.classList.add('hidden');
+      }
+    });
+  </script>
 </body>
-</html> 
+</html>
